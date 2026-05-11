@@ -1,0 +1,1 @@
+UPDATE auth.users SET encrypted_password = crypt('TestAccpass123', gen_salt('bf')) WHERE email='molyn.owner.ai@gmail.com';

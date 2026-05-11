@@ -1,0 +1,1 @@
+UPDATE public.profiles SET username = full_name WHERE (username IS NULL OR username = '') AND full_name IS NOT NULL;

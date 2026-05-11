@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Security headers (HSTS / X-Frame-Options must be set by the host; below is what meta tags can express) -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="geolocation=(self), microphone=(), camera=(), payment=(self)" />
+    <!-- Content Security Policy: allows app's own assets, Supabase, Stripe, R2, Lovable AI gateway, Google Fonts, Mapbox, and Cloudflare Turnstile -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.stripe.com https://api.mapbox.com https://challenges.cloudflare.com https://*.lovable.app https://*.lovable.dev; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://api.mapbox.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://gigzciepwjrwbljdnixh.supabase.co wss://gigzciepwjrwbljdnixh.supabase.co https://api.stripe.com https://api.mapbox.com https://events.mapbox.com https://*.r2.dev https://*.r2.cloudflarestorage.com https://ai.gateway.lovable.dev https://*.lovable.app https://*.lovable.dev; frame-src https://js.stripe.com https://hooks.stripe.com https://challenges.cloudflare.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self' https://checkout.stripe.com" />
+    <title>Samsari – Secure Short-Term Rentals in Tunisia</title>
+    <meta name="description" content="Samsari is a secure short-term rental platform in Tunisia for houses and apartments, featuring protected payments, escrow, and host-guest protection.">
+    <meta name="keywords" content="short-term rental Tunisia, vacation rentals in Tunisia, secure house rental Tunisia, verified apartments Tunisia, rent apartment in Tunisia, holiday homes Tunisia, alternative to Airbnb Tunisia, trusted rental platform Tunisia, location courte durée Tunisie, location vacances Tunisie, appartement à louer Tunisie, maison à louer Tunisie, immobilier sécurisé Tunisie, كراء دار تونس, كراء شقة تونس, كراء للعطلة تونس, منصة كراء موثوقة تونس, rent apartment in Tunis, short-term rental Hammamet, vacation home Sousse, appartement à louer Sfax, location vacances Nabeul">
+    <meta name="author" content="Samsari" />
+    <meta name="language" content="en, fr, ar" />
+    <meta name="geo.region" content="TN" />
+    <meta name="geo.placename" content="Tunisia" />
+    <link rel="canonical" href="https://samsari.tech/" />
+    <link rel="alternate" hreflang="fr" href="https://samsari.tech/" />
+    <link rel="alternate" hreflang="ar" href="https://samsari.tech/" />
+    <link rel="alternate" hreflang="en" href="https://samsari.tech/" />
+    <link rel="alternate" hreflang="x-default" href="https://samsari.tech/" />
+
+    
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/bf834de5-e5b1-4817-ae41-4d06422461dd?Expires=1772799560&amp;GoogleAccessId=go-api-on-aws%40gpt-engineer-390607.iam.gserviceaccount.com&amp;Signature=Z%2FqBTxmtcvQ4%2F9XtEKmvB0vGL2KowyPnsFanO0zLACYOvmM82aUJgymiik7EkgJYaTLWKenTxHCF5oTxzsyF4WuQZYppOGBOFaCXU4RqndSYuRw8T2qPyrY5NO32%2F5rNIrjBO%2FUwKv77xloILqCf3NSWXLuGB4X3fuGTwCped9FXXu9I%2FGkpEzUQbwP3Re6QyemvnmTMyZWW%2FTiwMnHmoJLnC42u4XidY4LUdblDImdWtjEjp6TDHixdorWeToq0N1FlYoENO8pfzdUvUgNkwuIq1TEyDtC6buEef%2Fs%2BKIaM%2BQgmLUsGcdZTaeXrrw21waURkqhsfOGg%2FZ3kpTVb4g%3D%3D">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="fr_TN" />
+    <meta property="og:locale:alternate" content="ar_TN" />
+    <meta property="og:site_name" content="Samsari" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@samsari_tn" />
+    
+    
+    <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/bf834de5-e5b1-4817-ae41-4d06422461dd?Expires=1772799560&amp;GoogleAccessId=go-api-on-aws%40gpt-engineer-390607.iam.gserviceaccount.com&amp;Signature=Z%2FqBTxmtcvQ4%2F9XtEKmvB0vGL2KowyPnsFanO0zLACYOvmM82aUJgymiik7EkgJYaTLWKenTxHCF5oTxzsyF4WuQZYppOGBOFaCXU4RqndSYuRw8T2qPyrY5NO32%2F5rNIrjBO%2FUwKv77xloILqCf3NSWXLuGB4X3fuGTwCped9FXXu9I%2FGkpEzUQbwP3Re6QyemvnmTMyZWW%2FTiwMnHmoJLnC42u4XidY4LUdblDImdWtjEjp6TDHixdorWeToq0N1FlYoENO8pfzdUvUgNkwuIq1TEyDtC6buEef%2Fs%2BKIaM%2BQgmLUsGcdZTaeXrrw21waURkqhsfOGg%2FZ3kpTVb4g%3D%3D">
+    
+  
+  
+  
+  <link rel="preconnect" href="https://gigzciepwjrwbljdnixh.supabase.co" />
+  <link rel="preconnect" href="https://pub-fbfee19a9f4f4874bb58350b017e120c.r2.dev" crossorigin />
+  <link rel="icon" type="image/png" href="/favicon.png">
+  
+  
+  
+  
+  <meta property="og:title" content="Samsari – Secure Short-Term Rentals in Tunisia">
+  <meta name="twitter:title" content="Samsari – Secure Short-Term Rentals in Tunisia">
+  <meta property="og:description" content="Samsari is a secure short-term rental platform in Tunisia for houses and apartments, featuring protected payments, escrow, and host-guest protection.">
+  <meta name="twitter:description" content="Samsari is a secure short-term rental platform in Tunisia for houses and apartments, featuring protected payments, escrow, and host-guest protection.">
+</head>
+
+  <body>
+    <div id="root"></div>
+    
+    <!-- Crawlable content for search engines (hidden when JS renders the app) -->
+    <noscript>
+      <header>
+        <h1>Samsari – Secure Short-Term Rentals in Tunisia</h1>
+        <nav>
+          <a href="/search">Search Properties</a> |
+          <a href="/become-host">Become a Host</a> |
+          <a href="/help">Help</a> |
+          <a href="/safety">Safety</a>
+        </nav>
+      </header>
+      <main>
+        <section>
+          <h2>Find Your Perfect Stay in Tunisia</h2>
+          <p>Samsari is a secure short-term rental platform connecting travelers with verified hosts across Tunisia. Book apartments, houses, villas, and studios with escrow-protected payments.</p>
+        </section>
+        <section>
+          <h2>Why Samsari?</h2>
+          <ul>
+            <li>Identity-verified hosts and guests</li>
+            <li>Escrow-protected payments — no cash, no risk</li>
+            <li>24/7 customer support</li>
+            <li>Properties in Tunis, Sousse, Hammamet, Nabeul, Sfax, Djerba, and more</li>
+          </ul>
+        </section>
+        <section>
+          <h2>How It Works</h2>
+          <ol>
+            <li>Search for properties by city, dates, and number of guests</li>
+            <li>Book securely with a deposit — remaining balance paid before check-in</li>
+            <li>Check in and enjoy your stay with full platform protection</li>
+          </ol>
+        </section>
+        <section>
+          <h2>Popular Destinations</h2>
+          <p>Tunis · La Marsa · Sousse · Hammamet · Nabeul · Sfax · Djerba · Monastir · Bizerte · Mahdia</p>
+        </section>
+        <section>
+          <h2>Frequently Asked Questions</h2>
+          <dl>
+            <dt>How does escrow payment work on Samsari?</dt>
+            <dd>When you book a property on Samsari, you pay only 20% upfront as a deposit. Your payment is held securely by the platform — not sent directly to the host. The remaining 80% is paid at check-in. Funds are only released to the host after both parties confirm check-in and check-out through the app, eliminating the risk of scams or no-shows.</dd>
+            <dt>What payment methods does Samsari accept?</dt>
+            <dd>Samsari accepts international credit and debit cards (Visa, Mastercard) processed securely through Stripe. All payments are protected by escrow — your money is held safely until both host and guest confirm the stay.</dd>
+            <dt>How does identity verification work?</dt>
+            <dd>Every host and guest on Samsari must verify their identity using a government-issued ID (CIN or passport) and a selfie before they can book or list a property.</dd>
+            <dt>Where is Samsari available?</dt>
+            <dd>Samsari covers rentals across all 24 Tunisian governorates including Tunis, Hammamet, Sousse, Djerba, Monastir, Bizerte, Tabarka, Sfax, Nabeul, Tozeur, Mahdia, and Kelibia.</dd>
+            <dt>What is Samsari's cancellation policy?</dt>
+            <dd>Samsari offers a flexible cancellation policy. If you cancel before the check-in deadline, your deposit is fully refunded.</dd>
+            <dt>How much does Samsari charge hosts?</dt>
+            <dd>Samsari charges hosts a 9% platform commission on each booking. Hosts keep 91% of their rental income with no listing fees or hidden charges.</dd>
+            <dt>How do I contact Samsari support?</dt>
+            <dd>Samsari support is available Monday to Saturday, 9 AM to 6 PM, via WhatsApp and email at support@samsari.tn. Our local team speaks French, Arabic, and English.</dd>
+          </dl>
+        </section>
+        <footer>
+          <p>&copy; 2026 Samsari. <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a></p>
+        </footer>
+      </main>
+    </noscript>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "Samsari",
+          "url": "https://samsari.tech",
+          "description": "Secure short-term rental platform in Tunisia with escrow-protected payments",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://samsari.tech/search?location={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "Samsari",
+          "url": "https://samsari.tech",
+          "logo": "https://samsari.tech/favicon.png",
+          "description": "Tunisia's first dedicated platform for secure short-term rentals with escrow payment protection.",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "support@samsari.tn",
+            "contactType": "customer service",
+            "availableLanguage": ["French", "Arabic", "English"],
+            "hoursAvailable": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+              "opens": "09:00",
+              "closes": "18:00"
+            }
+          },
+          "areaServed": { "@type": "Country", "name": "Tunisia" }
+        }
+      ]
+    }
+    </script>
+
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

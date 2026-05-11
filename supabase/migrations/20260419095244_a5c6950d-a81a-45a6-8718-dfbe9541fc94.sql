@@ -1,0 +1,1 @@
+UPDATE profiles SET is_host = true, verification_status = 'verified', verification_submitted_at = COALESCE(verification_submitted_at, now()), full_name = COALESCE(full_name, 'Mohamed Jawedi'), phone = COALESCE(phone, '+216 99000001') WHERE id = '23ba6a96-be08-42a0-84b9-8f35ec2230ff';

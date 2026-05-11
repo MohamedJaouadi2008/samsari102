@@ -1,0 +1,1 @@
+ALTER TABLE id_verifications ADD COLUMN IF NOT EXISTS images_cleaned_at timestamptz DEFAULT NULL;

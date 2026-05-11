@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /profile
+Disallow: /booking/
+Disallow: /payment/
+Disallow: /host/
+Disallow: /admin
+
+Sitemap: https://samsari.tech/sitemap.xml
